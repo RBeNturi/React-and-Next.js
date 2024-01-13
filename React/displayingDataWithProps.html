@@ -7,17 +7,23 @@
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
         <script type="text/jsx">
             const app=document.getElementById('app');
-            //Create a React component
-            //React components are functions that return JSX
-            //React components must be capitalized
-            function Header(){
-                return <h1>Develop.Preview.Ship</h1>;
+
+            function HomePage() {
+                return (
+                    <div>
+                        <Header title="React" />
+                    </div>
+                );
             }
-            //Create a React root
+
+
+            function Header({ title }) {
+                console.log(title); // "React"
+                return <h1>Develop. Preview. Ship.</h1>;
+            }
+
             const root=ReactDOM.createRoot(app);
-            //Render the React component
-            //React components are placed in tags like HTML elements
-            root.render(<Header/>);
+            root.render(<HomePage/>);
         </script>
     </body>
 </html>
